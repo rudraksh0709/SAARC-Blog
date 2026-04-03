@@ -1,0 +1,239 @@
+/* Reset-Universal Selector*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Box model applied */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to left, #fdfbfb, #ebedee);
+  color: #fff;
+  padding: 1em;
+  text-align: left;
+}
+header h1 {
+  color: #2F2F2F;
+}
+
+/* Navigation Bar */
+nav {
+  background: #e3f2fd;
+}
+nav ul {
+  display: flex; /* Horizontal layout */
+  justify-content: center;
+  list-style: none;
+  }
+nav li {
+  margin: 0 1em;
+}
+nav a {
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  transition: background 0.3s ease;
+}
+nav a:hover {
+  background: #D2B48C;
+  border-radius: 0.4em;
+}
+
+header img {
+  height: 6%;
+  width: 6%;
+  border-radius: 0.5em;
+  margin-right: 0.2em
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Posts + Sidebar */
+  gap: 2em;
+  padding: 2em;
+}
+
+/* Blog Posts List */
+.posts article {
+  background: #f9f9f9;
+  padding: 1.2em;
+  margin-bottom: 1.2em;
+  border: 0.1em solid #ddd;
+  border-radius: 0.5em;
+}
+.posts form {
+  background: #f9f9f9;
+  padding: 2em;
+  margin-bottom: 1.5em;
+  border: 0.1em solid #ddd;
+  border-radius: 0.5em;
+}
+
+.posts img {
+  width: 1.5em;
+  height: auto;
+}
+
+/* Individual Blog Post */
+.each-post article {
+  background: #f9f9f9;
+  padding: 1.2em;
+  margin-bottom: 1.2em;
+  border: 0.1em solid #ddd;
+  border-radius: 0.5em;
+}
+.each-post form {
+  background: #f9f9f9;
+  padding: 2em;
+  margin-bottom: 1.5em;
+  border: 0.1em solid #ddd;
+  border-radius: 0.5em;
+}
+
+.each-post img {
+  width: 20em;
+  height: auto;
+  float: right;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+#blog-author {
+  font-style: italic;
+  color: green;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #eee;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-style: italic;
+  text-align: justify;
+  color: grey;
+}
+.blink {
+  animation: blink 1.5s infinite; /* blinking animation */
+}
+@keyframes blink {
+  0% { opacity: 1; }   /* Visible */
+  50% { opacity: 0; }  /* Hidden */
+  100% { opacity: 1; } /* Visible again */
+}
+
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+form input[type="submit"] {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+/* Responsive Design for tablet*/
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack posts and sidebar */
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav li {
+    margin: 0.5em 0;
+  }
+}
+
+/* Responsive Design for mobile*/
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack everything */
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav li {
+    margin: 0.5em 0;
+  }
+  body {
+    font-size: 0.5em; /* Smaller text for mobile */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 2fr 1fr; /* Posts + Sidebar side by side */
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+  body {
+    font-size: 0.8em; /* Larger text for desktops */
+  }
+}
